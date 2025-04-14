@@ -104,7 +104,7 @@ function SignUp() {
              className='mx-7 '
              />
 
-            {error && <p className='text-red-500 text-xs pb-1'>{error}</p>}
+            {error && <p className='text-red-500 text-xs pb-1'>{error.message}</p>}
             
 
             <button 
