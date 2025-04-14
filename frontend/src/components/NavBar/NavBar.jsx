@@ -35,7 +35,7 @@ function NavBar({onSearchNote,handleClearSearch}) {
     <div className={`flex  flex-col sm:flex-row items-center px-6 py-2  shadow ${ userInNavBar ? 'justify-between' : 'justify-center ' }  gap-2.5 bg-fuchsia-900 ` }>
        <div className='flex   justify-center items-center'>
           <h2 className='text-2xl font-medium text-white  '>NOTES</h2>
-          <img src="NotesApp\frontend\images\note-logo.png" width={60} />
+          <img src="..\images\note-logo.png" width={60} />
        </div>
         <SearchBar 
         value = {searchQuery}
