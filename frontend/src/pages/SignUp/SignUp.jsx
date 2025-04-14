@@ -63,12 +63,12 @@ function SignUp() {
       }
       
      } catch (error) {
-         if(error){
-          setError(error)
-         }
-         else{
-          setError("An unexpected error occured .Please try again")
-         }
+      const errorMessage =
+      error?.response?.data?.message || // if API sends custom error
+      error?.message ||                
+      "An unexpected error occurred. Please try again.";
+  
+       setError(errorMessage); 
      }
 
   }
@@ -104,7 +104,7 @@ function SignUp() {
              className='mx-7 '
              />
 
-            {error && <p className='text-red-500 text-xs pb-1'>{error.message}</p>}
+            {error && <p className='text-red-500 text-xs pb-1'>{error}</p>}
             
 
             <button 
