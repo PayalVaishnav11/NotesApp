@@ -29,10 +29,11 @@ function NoteCard({
     }
 
   return (
-    <div className='border rounded  hover:shadow-xl  transition-all ease-in-out flex flex-col flex-wrap bg-yellow-100 rounded-t-2xl '>
+    <div className='  w-full max-w-xs sm:max-w-sm mx-auto border rounded  hover:shadow-xl  transition-all ease-in-out flex flex-col  bg-yellow-100 rounded-t-2xl '>
         
-        <h6 className='text-lg font-medium text-wrap bg-yellow-500 h-10 px-4 pt-2 rounded-t-2xl'>{title}</h6>
-        <div className='flex items-center justify-between flex-wrap pl-4 pr-4 '>
+        <h6 className='text-base sm:text-lg font-semibold text-wrap bg-yellow-500  px-4 pt-2 rounded-t-2xl'>{title}</h6>
+
+        <div className='flex items-center justify-between  text-sm flex-wrap pl-4 pr-4 '>
              <div>
                
                 <span className='text-sm text-slate-900'>{moment(date).format('Do MMM YYYY')}</span>
@@ -41,18 +42,18 @@ function NoteCard({
              size={22}
              onClick={onPinNote}
              className={`text-xl  cursor-pointer hover:text-[#2B85FF] 
-                ${ isPinned ? 'text-blue-800' : 'text-slate-300'}`}/>
+             ${ isPinned ? 'text-blue-800' : 'text-slate-300'}`}/>
         </div>
 
-        <div className='py-3 flex items-center justify-between pl-4 pr-4 '>
+        <div className='flex justify-between items-center px-4 py-2   '>
            
-            <p className='text-sm text-slate-900 mt-2  '>
-              {`${content?.slice(0,40)}...` }
+            <p className='text-sm text-slate-900  truncate max-w-[80%]'>
+              {`${content?.slice(0,30)}...` }
             </p>
 
             <FaRegEye 
-            size={18} 
-            className='text-slate-400 cursor pinter'
+            size={18}
+            className='text-slate-400 cursor pinter  '
             onClick={()=> handleContentModal(content)}
             />  
 
@@ -65,7 +66,8 @@ function NoteCard({
              backgroundColor:"rgba(0,0,0,0.2)"
             }
           }}
-          className="w-1/3  h-1/3 bg-yellow-300 rounded-2xl mx-auto mt-28 outline-none  "
+          className=" w-[90%] sm:w-2/3 md:w-1/2 lg:w-1/3  max-h-[80vh]  bg-yellow-300 rounded-2xl mx-auto mt-28  p-4 outline-none
+           overflow-y-auto  shadow-2xl transition-all duration-300 ease-in-out  "
         >
            <ContentModal 
            data={content}
@@ -76,8 +78,8 @@ function NoteCard({
        
 
         <div className='flex items-center justify-between mt-2 flex-wrap pl-4 pr-4 pb-4 gap-2 '>
-             <div className='text-sm text-slate-900  '>
-              {tags.map((tag)=> `#${tag}`)}
+             <div className='text-sm text-slate-900   '>
+              {tags.map((tag)=> `  #️ ${tag}`)}
              </div>
 
              <div className='flex items-center gap-2 '>

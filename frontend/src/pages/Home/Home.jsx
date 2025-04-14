@@ -150,7 +150,7 @@ function Home() {
         <NavBar onSearchNote={onSearchNote} handleClearSearch={handleClearSearch}/>
         <div className='mx-auto '>
           { allNotes?.length > 0 ? 
-              <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-8   px-32  
+              <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-8    px-9 sm:px-32  
               '>
               {
                 allNotes.map((note,index)=> (
@@ -173,7 +173,7 @@ function Home() {
            :
            <EmptyCard
             imgSrc={isSearch ? noDataImg : addNoteImg }
-            message={isSearch ? `Oops ! No notes found matching your search .`:`Start creating your first note ! Click the 'Add' button to jot down your thoughts, ideas, and reminders . Lets's get started! `}
+            message={isSearch ? `Oops ! No notes found matching your search .`:`Start creating your first note ! Click the 'Add' button to jot down your thoughts, ideas, and reminders . Lets's get started ! `}
            />
           }
         </div>
