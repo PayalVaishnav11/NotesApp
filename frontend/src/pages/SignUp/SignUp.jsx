@@ -48,6 +48,7 @@ function SignUp() {
          email:email,
          password:password
       })
+      console.log("response",response);
 
       if(response.data){
 
@@ -63,6 +64,7 @@ function SignUp() {
       }
       
      } catch (error) {
+      console.log("error in signup :",error)
       const errorMessage =
       error?.response?.status === 409
         ? error?.response?.data?.message || "User already exists with this email."

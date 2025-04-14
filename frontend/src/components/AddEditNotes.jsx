@@ -80,8 +80,9 @@ function AddEditNotes({noteData , type ,onClose,getAllNotes,showToastMessage}) {
         </button>
 
        <div className='flex flex-col gap-2 '>
-          <label  className='text-xs text-slate-400'>TITLE</label>
+          <label htmlFor="note-title" className='text-xs text-slate-400'>TITLE</label>
           <input 
+          id="note-title"
           type="text"
           className='text-2xl text-slate-950 outline-none'
           placeholder='Add Title...'
@@ -91,8 +92,9 @@ function AddEditNotes({noteData , type ,onClose,getAllNotes,showToastMessage}) {
        </div>
 
        <div className='flex flex-col gap-2 mt-4'>
-          <label className='text-xs text-slate-400'>CONTENT</label>
+          <label  htmlFor="note-content" className='text-xs text-slate-400'>CONTENT</label>
           <textarea 
+          id="note-content"
           type="text"
           className='text-sm text-slate-950 outline-none bg-slate-50 p-2 rounded'
           placeholder='Content'
