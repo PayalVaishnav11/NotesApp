@@ -64,11 +64,11 @@ function SignUp() {
       
      } catch (error) {
       const errorMessage =
-      error?.response?.data?.message || // if API sends custom error
-      error?.message ||                
-      "An unexpected error occurred. Please try again.";
+      error?.response?.status === 409
+        ? error?.response?.data?.message || "User already exists with this email."
+        : error?.response?.data?.message || "Something went wrong. Please try again.";
   
-       setError(errorMessage); 
+      setError(errorMessage);
      }
 
   }

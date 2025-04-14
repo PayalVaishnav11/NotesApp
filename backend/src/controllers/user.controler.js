@@ -41,10 +41,10 @@ const generateAccessAndRefereshTokens = async (userId) => {
          throw new ApiError(400,"All fields are required !");
      }
 
-     const existedUser = await  User.findOne({ $or:[{fullName},{email}]})
+     const existedUser = await  User.findOne( {email})
 
      if(existedUser){
-        throw new ApiError(409,"User with username or email already exsits")
+        throw new ApiError(409,"User with this email already exsits")
      }
 
      const user = await User.create({
